@@ -1,12 +1,12 @@
 "use client"
 
-import React, { useContext } from 'react'
-import SectionHeading from './sectionHeading'
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css'
+import { useTheme } from '@/context/themeContext';
 import { experiencesData } from '@/lib/data';
 import { useSectionInView } from '@/lib/hooks';
-import { useTheme } from '@/context/themeContext';
+import React from 'react';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import SectionHeading from './sectionHeading';
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
@@ -40,7 +40,6 @@ export default function Experience() {
                 fontSize: "1.5rem"
               }}>
               <h3 className='font-semibold capitalize'>{item.title}</h3>
-              <p className='font-normal !mt-0'>{item.location}</p>
               <p className='!mt-1 !font-normal text-gray-700 dark:text-white/75'>{item.description}</p>
             </VerticalTimelineElement>
           </React.Fragment>

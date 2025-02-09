@@ -1,12 +1,11 @@
 "use client"
 
-import React from 'react'
-import SectionHeading from './sectionHeading'
-import { motion } from "framer-motion"
-import { useSectionInView } from '@/lib/hooks'
 import { sendEmail } from '@/actions/sendEmail'
-import SubmitBtn from './submitBtn'
+import { useSectionInView } from '@/lib/hooks'
+import { motion } from "framer-motion"
 import toast from 'react-hot-toast'
+import SectionHeading from './sectionHeading'
+import SubmitBtn from './submitBtn'
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -30,7 +29,7 @@ export default function Contact() {
       >
       <SectionHeading>Contact Me</SectionHeading>
 
-      <p className='text-gray-700 -mt-6 dark:text-white/80'>Please contact me directly at <a className='underline' href="mailto:example@gmail.com">example@gmail.com</a> or through this form.</p>
+      <p className='text-gray-700 -mt-6 dark:text-white/80'>You can contact me directly at <a className='underline' href="mailto:jimenezgabriel12@gmail.com">jimenezgabriel12@gmail.com</a> or through this form.</p>
 
       <form className='mt-10 flex flex-col dark:text-black' action={async formData => {
         const { data, error } = await sendEmail(formData);

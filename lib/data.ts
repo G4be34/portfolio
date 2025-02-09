@@ -3,8 +3,10 @@ import hshbImg from "@/public/hshb.png";
 import aiPropertyListingsImg from "@/public/propertylistings.png";
 import safeSpaceImg from "@/public/safespace.png";
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
+import { CiMobile4 } from "react-icons/ci";
 import { FaReact } from "react-icons/fa";
+import { GiBullseye } from "react-icons/gi";
+import { IoRocketOutline } from "react-icons/io5";
 import { LuGraduationCap } from "react-icons/lu";
 
 export const links = [
@@ -36,28 +38,39 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "I began my journey into Web Development",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "Using the amazing guidance of The Odin Project I learned the basics of HTML, CSS and JavaScript along with the fundamentals of web development.",
+    icon: React.createElement(IoRocketOutline),
+    date: "Sep 2022",
+  },
+  {
+    title: "Graduated from Hack Reactor",
+    description:
+      "I learned the fundamentals of full-stack web development using React, Node.js, Express and a variety of backend technologies.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "Mar 2023 - June 2023",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Attended my first Hackathon",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+      "Working in a team of 5 we developed a full-stack mobile application called SafeSpace for one of the many non-profit organizations who were seeking technical help through oHack.",
+    icon: React.createElement(CiMobile4),
+    date: "Oct 2023 - Nov 2023",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Joined the coding group Coding with Callie",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "After joining a then small group of coding enthusiasts we each created our own full-stack advanced Todo App, mine was called CWC Todo App.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "Feb 2024 - Oct 2024",
+  },
+  {
+    title: "Continuing my passion for coding while job hunting",
+    description:
+      "Throughout all this time I continue to improve my skills while learning new technologies by working on personal projects and freelance opportunities with a goal of finding a full-time position.",
+    icon: React.createElement(GiBullseye),
+    date: "Present",
   },
 ] as const;
 
