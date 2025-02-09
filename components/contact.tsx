@@ -3,12 +3,16 @@
 import { sendEmail } from '@/actions/sendEmail'
 import { useSectionInView } from '@/lib/hooks'
 import { motion } from "framer-motion"
+import { useRef, useState } from 'react'
 import toast from 'react-hot-toast'
 import SectionHeading from './sectionHeading'
 import SubmitBtn from './submitBtn'
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
   return (
     <motion.section
       ref={ref}
@@ -31,15 +35,20 @@ export default function Contact() {
 
       <p className='text-gray-700 -mt-6 dark:text-white/80'>You can contact me directly at <a className='underline' href="mailto:jimenezgabriel12@gmail.com">jimenezgabriel12@gmail.com</a> or through this form.</p>
 
-      <form className='mt-10 flex flex-col dark:text-black' action={async formData => {
+      <form ref={formRef} className='mt-10 flex flex-col dark:text-black' action={async formData => {
+        setLoading(true);
         const { data, error } = await sendEmail(formData);
 
         if (error) {
           toast.error(error);
+          setLoading(false);
           return;
         }
 
-        toast.success("Email sent successfully!")
+        toast.success("Email sent successfully!");
+        setLoading(false);
+
+        formRef.current?.reset();
       }}>
         <input
           type="email"
