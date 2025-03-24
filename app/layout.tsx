@@ -2,6 +2,7 @@ import Footer from '@/components/footer';
 import ThemeSwitch from '@/components/themeSwitch';
 import ActiveSectionContextProvider from '@/context/activeSectionContext';
 import ThemeContextProvider from '@/context/themeContext';
+import { Analytics } from '@vercel/analytics/next';
 import { Inter } from 'next/font/google';
 import { Toaster } from "react-hot-toast";
 import './globals.css';
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
+        <Analytics />
       </body>
     </html>
   )
